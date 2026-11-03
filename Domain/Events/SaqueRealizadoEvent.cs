@@ -1,6 +1,13 @@
-﻿namespace Domain.Eventos
+﻿using Domain.Interfaces;
+
+namespace Domain.Eventos
 {
-    public class SaqueRealizadoEvent
+    public record SaqueRealizadoEvent(
+        Guid ContaId,
+        decimal Valor,
+        DateTime OccurredOn
+        ) : IDomainEvent
     {
+        public Guid EventId { get; } = Guid.NewGuid();
     }
 }
