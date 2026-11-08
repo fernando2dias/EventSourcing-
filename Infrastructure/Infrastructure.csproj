@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MongoDB\" />
-    <Folder Include="Postgres\" />
+    <Folder Include="Postgres\Scripts\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.89" />
+    <PackageReference Include="dbup-postgresql" Version="7.0.1" />
     <PackageReference Include="MongoDB.Driver" Version="3.13.0" />
     <PackageReference Include="Npgsql" Version="10.0.3" />
   </ItemGroup>
@@ -20,6 +20,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\*.sql" />
   </ItemGroup>
 
 </Project>
